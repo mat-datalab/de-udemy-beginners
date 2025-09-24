@@ -1,9 +1,0 @@
-# Globalne ustawienia projektu
-project:
-  name: de-course-repo
-  author: Your Name
-
-spark:
-  master: local[*]
-  app_name: de-course-example
-  shuffle_partitions: 1
