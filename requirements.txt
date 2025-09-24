@@ -1,0 +1,18 @@
+# Core
+pyspark
+pandas
+pyarrow
+python-dotenv
+PyYAML
+duckdb
+
+# Dev
+pytest
+black
+isort
+flake8
+pre-commit
+
+# Notebooks
+jupyter
+ipykernel
