@@ -1,11 +1,11 @@
 # Data Engineering — SQL (DuckDB)
 
-Zbiór rozwiązań zadań SQL na danych **retail_db** + lekki runner w Pythonie (DuckDB).
-Repo pokazuje: joins, agregacje, filtrowanie po datach, CTE i raportowanie wyników.
+A compact collection of SQL exercises on **retail_db** data, plus a lightweight Python runner powered by DuckDB.  
+Focus areas: joins, aggregations, date filtering, CTEs, and exporting results.
 
 ---
 
-## 🏁 Szybki start
+## 🏁 Quick start
 
 ```bash
 python -m venv .venv
@@ -14,17 +14,20 @@ python -m venv .venv
 pip install duckdb pandas pyarrow
 python sql/run_sql.py --all
 
+
+📂 Repository structure
 .
 ├─ sql/
-│  ├─ queries/         # pliki .sql (Exercise 1–5 i kolejne)
-│  └─ run_sql.py       # runner: rejestruje CSV → uruchamia zapytania → zapisuje wyniki
+│  ├─ queries/         # SQL files (Exercise 1–5 and future tasks)
+│  └─ run_sql.py       # registers CSVs → executes queries → saves outputs
 ├─ data/
-│  ├─ retail_db/       # surowe dane (CSV) – śledzone w Git
-│  └─ _outputs/sql/    # wyniki (CSV/Parquet/HTML) – pomijane w Git
-├─ src/                # (na przyszłe skrypty Pythona)
-└─ notebooks/          # (na notatniki)
+│  ├─ retail_db/       # sample CSV data (tracked in Git)
+│  └─ _outputs/sql/    # results (CSV/Parquet/HTML) — ignored by Git
+├─ src/                # placeholder for upcoming Python code
+└─ notebooks/          # Jupyter notebooks
 
-✅ Zadania (wycinek)
+
+✅ Exercises (sample)
 
 Exercise 1 – Customer order count (2014-01)
 
@@ -36,20 +39,22 @@ Exercise 4 – Revenue per category (2014-01)
 
 Exercise 5 – Product count per department
 
-Każdy plik SQL zaczyna się od nagłówka:
--- title: Exercise N - Krótki opis
--- description: co liczymy + zakres dat (np. 2014-01)
+Each SQL file starts with a short header:
+-- title: Exercise N - Short description
+-- description: what is computed + date scope (e.g., 2014-01)
 
-ℹ️ Uwagi
 
-Dane demo: data/retail_db/ (małe próbki).
+ℹ️ Notes
 
-Jeśli pole daty jest tekstowe, w razie potrzeby rzutuj: CAST(order_date AS DATE).
+Demo data lives in data/retail_db/ (small, self-contained samples).
 
-Wyniki i artefakty nie są commitowane (trafiają do data/_outputs/sql/).
+If date fields are stored as text, cast when needed (e.g., CAST(order_date AS DATE)).
 
-🧩 Techniki i narzędzia
+Outputs and artifacts are not committed (they go to data/_outputs/sql/).
 
-SQL: JOIN, GROUP BY, agregacje, CTE, filtrowanie po datach.
 
-Python + DuckDB do uruchamiania kwerend i eksportu wyników.
+🧩 Tech & concepts
+
+SQL: JOIN, GROUP BY, aggregations, CTEs, date filtering.
+
+Python + DuckDB for running queries and exporting results.
